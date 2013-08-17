@@ -1,0 +1,19 @@
+#eventWrapper{float:left;
+              padding:10px;width:95%;
+                    background-color:#C0C0C0;
+                    border:1px solid black;
+                    z-index:1;}
+#frmButtons{
+        margin:10px;
+        padding:10px;
+        float:left;clear:left;
+        }
+
+#evtLabel{width:200px;text-align:right;clear:left;float:left;margin-left:10px;font-weight:bold;}
+
+#evtField{float:left;margin-left:10px;width:200px;text-align:left;}
+
+#timepicker input{width:130px}
+#fldRow{float:left;clear:left;}
+
+h1{margin-bottom:10px;float:left;clear:left;}

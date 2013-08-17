@@ -1,0 +1,60 @@
+<style type="text/css">
+#eventWrapper{padding:10px;width:700px;height:300px;
+                    background-color:#C0C0C0;
+                    border:1px solid black;
+                    z-index:1;}
+#frmButtons{
+        margin:10px;
+        padding:10px;
+        float:left;clear:left;
+        }
+#closer{float:right;}
+.evtLabel{width:200px;text-align:right;clear:left;float:left;margin-left:10px;font-weight:bold;}
+.evtField{float:left;margin-left:10px;width:200px;text-align:left;}
+#timepicker input{width:130px}
+#fldRow{float:left;clear:left;}
+h1{margin-bottom:10px;float:left;clear:left;}
+</style>
+<div id="eventWrapper" >
+<form id="frmEditEvent">
+<input type="hidden" name="evtStart"  value="{start}"/>
+<input type="hidden" name="evtEnd" value="{end}"/>
+<input type="hidden" name="evtStartString"  value="{startString}"/>
+<input type="hidden" name="evtEndString" value="{endString}"/>
+<input type="hidden" name="dateTimeString" value="{dateTimeString}"/>
+<input type="hidden" name="eventID" value="{id}"/>
+<input type="hidden" name="calendarID" value="{calendarid}"/>
+<input type="hidden" name="flgUpdate" value="true"/>
+<object name="evtObject"/>
+<!-- 
+<div id="evtLabel">When:</div>
+    <div id="evtField"><span id="dateDisplay">{startDisplay} -- {endDisplay}</span></div>
+-->
+<div id="evtLabel"></div><div id="evtField">
+    <input name="evtTitle" 
+    hint="Please enter a title for this event" value="{title}"
+    style="width:300px;"/></div>
+  <div id="fldRow">
+   <div class="evtField">
+       <input name="evtStartDate" class="datepicker evtField" value="{startdate}"/>
+       <span id="timepicker" ><input class="timepicker time" id="evtStartTime" name="evtStartTime" value="{starttime}"/></span>    
+       to 
+       <input name="evtEndDate" class="datepicker" value="{enddate}"/>
+       <span id="timepicker" ><input class="timepicker time" id="evtEndTime" name="evtEndTime" value="{endtime}"/></span>    
+   </div>
+  </div>
+
+<div class="evtLabel">All day event:</div><div class="evtField"><input type="CheckBox" id="flgAllDay" name="evtAllDay" value="1" /></div>
+<div class="evtLabel"><hr></div>
+<div class="evtLabel">Description:</div><div class="evtField"><TEXTAREA width="80" height="40" name="evtDesc">{evtdesc}</TEXTAREA></div>
+<div class="evtLabel">URL:</div><div class="evtField"><input name="evtURL" style="width:200px;" value="{url}"/></div>
+<div class="evtLabel"><button onclick="javascript:editCalendarEvent(this.form.evtObject);">Advanced Edit</button></div>
+<div id="frmButtons">
+<button onclick="updateAndCloseEvent(this.form);return false;">Update Event</button>
+<button onclick="deleteFCEvent(this.form);closeEventEdit();return false;">Delete Event</button>
+<button onclick="closeEventEdit();return false;">Cancel</button>
+</div>
+</form>
+
+</div>
+

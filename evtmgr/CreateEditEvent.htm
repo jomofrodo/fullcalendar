@@ -1,0 +1,64 @@
+<link id="eventEditStyles" rel="stylesheet" href="/js/fullcalendar-1.6.2/template/event.css"/>
+<div id="eventWrapper" >
+<form id="frmEditEvent">
+<input type="hidden" name="evtStart"  value="{start}"/>
+<input type="hidden" name="evtEnd" value="{end}"/>
+<input type="hidden" name="evtStartString"  value="{startString}"/>
+<input type="hidden" name="evtEndString" value="{endString}"/>
+<input type="hidden" name="dateTimeString" value="{dateTimeString}"/>
+<input type="hidden" name="eventID" value="{id}"/>
+<input type="hidden" name="calendarID" value="{calendarid}"/>
+<input type="hidden" name="flgUpdate" value="true"/>
+<object name="evtObject"/>
+<!-- 
+<div id="evtLabel">When:</div>
+    <div id="evtField"><span id="dateDisplay">{startDisplay} -- {endDisplay}</span></div>
+-->
+<div id="evtLabel"></div><div id="evtField">
+    <input name="evtTitle" 
+    placeholder="Please enter a title for this event" value="{title}"
+    style="width:300px;"/></div>
+  <div id="fldRow">
+   <div >
+       <input name="evtStartDate" class="datepicker evtField" value="{startdate}"/>
+       <span id="timepicker" ><input class="timepicker time" id="evtStartTime" name="evtStartTime" value="{starttime}"/></span>    
+       to 
+       <input name="evtEndDate" class="datepicker" value="{enddate}"/>
+       <span id="timepicker" ><input class="timepicker time" id="evtEndTime" name="evtEndTime" value="{endtime}"/></span>    
+   </div>
+  </div>
+<div id="fldRow">
+	<div id="evtLabel">All day event:</div><div id="evtField"><input type="CheckBox" id="flgAllDay" name="evtAllDay" value="1" /></div>
+</div>
+
+<div id="evtLabel">Description:</div><div id="evtField"><TEXTAREA width="80" height="40" name="evtDesc">{evtDesc}</TEXTAREA></div>
+<div id="evtLabel">URL:</div><div id="evtField"><input name="evtURL" style="width:200px;" value="{url}"/></div>
+<div id="evtLabel"><button onclick="toggleAdvanced(this);return false;">+</button></div>
+
+<div id="divAdvancedEdit" style="display:none;">
+<div id="evtLabel">Location:</div><div id="evtField"><input name="evtLocation" style="width:200px;" value="{evtLocation}"/></div>
+<div id="evtLabel">Contact Name:</div><div id="evtField"><input name="evtContactName" style="width:200px;" value="{evtContactName}"/></div>
+<div id="evtLabel">Contact Email:</div><div id="evtField"><input name="evtContactEmail" style="width:200px;" value="{evtContactEmail}"/></div>
+<div id="evtLabel">Contact Phone:</div><div id="evtField"><input name="evtContactPhone" style="width:200px;" value="{evtContactPhone}"/></div>
+
+<div id="evtLabel">Organizer Name:</div><div id="evtField"><input name="evtOrganizerName" style="width:200px;" value="{evtOrganizerName}"/></div>
+<div id="evtLabel">Organizer Email:</div><div id="evtField"><input name="evtOrganizerEmail" style="width:200px;" value="{evtOrganizerEmail}"/></div>
+<div id="evtLabel">Organizer Phone:</div><div id="evtField"><input name="evtOrganizerPhone" style="width:200px;" value="{evtOrganizerPhone}"/></div>
+
+<div id="evtLabel">Call to Action Caption:</div><div id="evtField"><input name="efeCallToActionCaption" style="width:200px;" value="{efeCallToActionCaption}"/></div>
+<div id="evtLabel">Call to Action URL:</div><div id="evtField"><input name="efeCallToActionURL" style="width:200px;" value="{efeCallToActionURL}"/></div>
+</div>
+
+<div id="frmButtons">
+<button id="btnCreateEvt" class="evtButton" onclick="createFCEventAndCloseDialog(this.form);return false;">Create Event</button>
+<button id='btnUpdateEvt' class="evtButton" onclick="updateAndCloseEvent(this.form);return false;">Update Event</button>
+<button id='btnDeleteEvt' class="evtButton" onclick="deleteFCEvent(this.form);closeEventEdit();return false;">Delete Event</button>
+<button id='btnCancelEditEvt' class="evtButton" onclick="closeEventEdit();return false;">Cancel</button>
+<button id='btnCancelCreateEvt' class="evtButton" onclick="closeEventCreate();return false;">Cancel</button>
+</div>
+</form>
+
+</div>
+
+
+
